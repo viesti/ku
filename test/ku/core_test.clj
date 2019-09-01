@@ -5,4 +5,4 @@
 
 (deftest read-vault
   (is (= "moi"
-         (.trim (sut/read-vault (io/resource "test-vault") "foo")))))
+         (.trim (sut/decrypt-vault-file (io/resource "test-vault") "foo")))))
