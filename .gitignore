@@ -1,2 +1,5 @@
 .cpcache
 .nrepl-port
+target
+.lein-repl-history
+ku

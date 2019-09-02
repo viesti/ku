@@ -1,6 +1,5 @@
 (ns ku.core
-  (:require [clojure.string :as str]
-            [clojure.java.io :as io])
+  (:require [clojure.string :as str])
   (:import (javax.crypto SecretKeyFactory Cipher Mac)
            (javax.crypto.spec SecretKeySpec PBEKeySpec IvParameterSpec)
            (java.util Arrays)))
@@ -13,7 +12,7 @@
   (zipmap [:format-id :version :cipher :vault-id]
           (str/split header #";")))
 
-(defn hex-str->bytes [string]
+(defn hex-str->bytes ^bytes [^String string]
   (let [characters (.toCharArray string)
         byte-count (/ (alength characters)
                       2)
@@ -31,7 +30,7 @@
                  (+ char-idx 2)))
         bytes))))
 
-(defn decrypt-vault [vault-text password]
+(defn decrypt-vault [^String vault-text ^String password]
   (let [[header & payload] (str/split-lines vault-text)
         {:keys [format-id version cipher]} (parse-header header)
         _ (when-not (and (versions version)
