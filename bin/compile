@@ -12,6 +12,7 @@ $NATIVE_IMAGE \
   -H:ReflectionConfigurationFiles=reflection.json \
   --initialize-at-build-time  \
   -H:Log=registerResource: \
+  -H:EnableURLProtocols=http,https \
   --verbose \
   --no-fallback \
   --no-server \
