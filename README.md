@@ -7,6 +7,7 @@ A Clojure library for reading Ansible Vault files. Might turn into something els
 ## TODO
 
  * [x] Read Ansible Vault files
+ * [x] Write Ansible Vault
  * [ ] Build a binary with GraalVM native-image
  * [ ] Lookup Vault password from environment variables known to ansible-vault
  * [ ] Lookup Vault password via executable script
